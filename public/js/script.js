@@ -29,8 +29,6 @@ send.addEventListener('click', function () {
     addNewChat(input);
 });
 
-socket.on('connect', () => console.log("Socket connected!"));
-
 socket.on('pesan-baru', pesan => {
     const bubbleChat = createBubbleChat(pesan);
     bubbleChat.classList.add('text-l');

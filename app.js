@@ -13,12 +13,9 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', socket => {
-    console.log("Socket connected!");
     socket.on('kirim-pesan', pesan => {
         socket.broadcast.emit('pesan-baru', pesan);
     });
 });
 
-server.listen(port, () => {
-    console.log('Server running on port ' + port);
-});
+server.listen(port);
